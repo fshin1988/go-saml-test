@@ -12,8 +12,8 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", samlsp.Token(r.Context()).Attributes.Get("cn"))
-	fmt.Printf("attributes is %+v\n", samlsp.Token(r.Context()).Attributes)
+	fmt.Fprintf(w, "Hello, %s!", samlsp.Token(r.Context()).Attributes.Get("mail"))
+	fmt.Printf("Attributes of token is %+v\n", samlsp.Token(r.Context()).Attributes)
 }
 
 func main() {
