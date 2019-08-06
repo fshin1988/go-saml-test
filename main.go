@@ -13,6 +13,7 @@ import (
 
 func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, %s!", samlsp.Token(r.Context()).Attributes.Get("cn"))
+	fmt.Printf("attributes is %+v\n", samlsp.Token(r.Context()).Attributes)
 }
 
 func main() {
@@ -25,7 +26,7 @@ func main() {
 		panic(err) // TODO handle error
 	}
 
-	idpMetadataURL, err := url.Parse("https://www.testshib.org/metadata/testshib-providers.xml")
+	idpMetadataURL, err := url.Parse("https://samltest.id/saml/idp")
 	if err != nil {
 		panic(err) // TODO handle error
 	}
