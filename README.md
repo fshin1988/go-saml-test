@@ -12,5 +12,8 @@ curl localhost:8000/saml/metadata > ./metadata.xml
 ```
 Uploda `metadata.xml` from [this form](https://samltest.id/upload.php).
 
-### 3. Access
+### 3. Run http server & Access
+```
+go run main.go
+```
 Access to [http://localhost:8000/hello](http://localhost:8000/hello)
